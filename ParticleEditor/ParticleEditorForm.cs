@@ -43,6 +43,8 @@ namespace ParticleEditor
         uint totalParticles
         );
 
+        public delegate bool MChangeBG(string path);
+
 
         private readonly DllImporter mDll = new DllImporter();
         private ParticleSystem mParticleSystem = new ParticleSytstemFire();
@@ -52,7 +54,7 @@ namespace ParticleEditor
         public ParticleEditorForm()
         {
             InitializeComponent();
-            mIsBackgroundMove = true;
+            mIsBackgroundMove = false;
         }
 
         private void FormLoad(object sender, EventArgs e)
@@ -276,6 +278,16 @@ namespace ParticleEditor
         private void mPlayToolStripButton_Click(object sender, EventArgs e)
         {
             PropertyGridPropertyValueChanged(null, null);
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+             mDll.Invoke<MChangeBG, bool>(openFileDialog1.FileName);
         }
     }
 }

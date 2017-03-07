@@ -46,6 +46,13 @@ extern "C"
 		return true;
 	}
 
+	MEDUSA_EXPORT_API bool MChangeBG(const char*  strPath)
+	{
+		HelloWorld::ChangeBG(strPath);
+		return true;
+	}
+
+
 
 	MEDUSA_EXPORT_API bool MParticleChanged(float scale,bool isBackgroundMove,float angle,float angleVar,int destBlendFunc,int srcBlendFunc,float duration,float emissionRate,int emiiterMode,
 		GLbyte endColorR,GLbyte endColorG,GLbyte endColorB,GLbyte endColorA,

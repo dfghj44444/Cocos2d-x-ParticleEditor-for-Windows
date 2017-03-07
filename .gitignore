@@ -1,0 +1,8 @@
+*.obj
+*.db
+Debug.win32/
+*.sdf
+*.pdb
+*.cache
+*.suo
+*.opensdf

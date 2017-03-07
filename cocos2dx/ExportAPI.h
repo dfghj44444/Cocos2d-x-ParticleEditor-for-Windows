@@ -40,6 +40,7 @@ extern "C"
 		);
 
 	MEDUSA_EXPORT_API bool MGameCleanUp();
+	MEDUSA_EXPORT_API bool MChangeBG(const char* strPath);
 };
 
 
