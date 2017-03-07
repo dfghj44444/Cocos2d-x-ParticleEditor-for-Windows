@@ -4,16 +4,23 @@
 #include "cocos2d.h"
 using namespace cocos2d;
 
-class HelloWorld : public cocos2d::CCLayer
+class HelloWorld : public cocos2d::CCLayer,CCTouchDelegate 
 {
 public:
 	// Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
 	virtual bool init();  
+	virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+	virtual void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
+	virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+	
+	bool m_draged = false;
+	CCPoint m_lastPoint ;
 
 	// there's no 'id' in cpp, so we recommand to return the exactly class pointer
 	static cocos2d::CCScene* scene();
 	
 	static void ChangeBG(const char* thePath);
+	static void MMoveParticle(float dx, float dy);
 	// a selector callback
 
 	// implement the "static node()" method manually

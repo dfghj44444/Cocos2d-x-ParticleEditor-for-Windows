@@ -52,6 +52,12 @@ extern "C"
 		return true;
 	}
 
+	 MEDUSA_EXPORT_API bool MMoveParticle(float dx,float dy)
+	 {
+		 HelloWorld::MMoveParticle(dx,dy);
+		 return true;
+	 }
+
 
 
 	MEDUSA_EXPORT_API bool MParticleChanged(float scale,bool isBackgroundMove,float angle,float angleVar,int destBlendFunc,int srcBlendFunc,float duration,float emissionRate,int emiiterMode,

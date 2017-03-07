@@ -63,7 +63,7 @@ namespace ParticleEditor
             IsBackgroundMove = true;
             Scale = 1.0f;
 
-            DestBlendFunc = BlendFunc.GL_ONE_MINUS_SRC_ALPHA;
+            DestBlendFunc = BlendFunc.GL_DST_ALPHA;
             SrcBlendFunc = BlendFunc.GL_SRC_ALPHA;
             Duration = -1;
             IsSaveTextureImageData = false;

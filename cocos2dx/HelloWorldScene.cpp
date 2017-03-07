@@ -13,6 +13,13 @@ CCScene* HelloWorld::scene()
 	// 'layer' is an autorelease object
 	HelloWorld *layer = HelloWorld::create();
 
+
+	CCTouchDispatcher* pDispatcher = CCDirector::sharedDirector()->getTouchDispatcher();
+
+
+	pDispatcher->addTargetedDelegate(layer, 0, true);
+	
+
 	// add layer as a child to scene
 	scene->addChild(layer);
 
@@ -28,6 +35,12 @@ void HelloWorld::ChangeBG(const char* thePath)
 	mBackground->setTexture(pTexture);
 	//mBackground->setContentSize(pTexture->getContentSize());
 }
+
+ void HelloWorld::MMoveParticle(float dx , float dy )
+ {
+	 CCPoint newPos = ccp(mEmiiter->getPosition().x + dx,mEmiiter->getPosition().y + dy);
+	 mEmiiter->setPosition(newPos);
+ }
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
@@ -64,6 +77,37 @@ bool HelloWorld::init()
 	mEmiiter->setPosition(ccp(size.width/2,size.height/2));
 	mIsBackgroundMove=true;
 	return true;
+}
+
+bool HelloWorld::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+{
+	m_draged = true;
+	//m_lastPoint = pTouch->getLocationInView();
+
+	return true;
+}
+
+
+void HelloWorld::ccTouchMoved(CCTouch *touch, CCEvent *pEvent)
+{
+	if (!m_draged)
+		return ;
+	
+	//获得触摸点初始坐标  
+	CCPoint pos1 = touch->getLocationInView();
+	CCPoint pos2 = touch->getPreviousLocationInView();
+	float deltaX = pos2.x - pos1.x;
+	float deltaY =  pos2.y - pos1.y;
+
+	mEmiiter->setPosition(ccp(mEmiiter->getPositionX()-deltaX,mEmiiter->getPositionY()+deltaY));
+	
+}
+
+void HelloWorld::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
+{
+	m_draged = false;
+
+
 }
 
 void HelloWorld::ChangeParticle(float scale,bool isBackgroundMove,float angle,float angleVar,int destBlendFunc,int srcBlendFunc,float duration,float emissionRate,int emiiterMode,

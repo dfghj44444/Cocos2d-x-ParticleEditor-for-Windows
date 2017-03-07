@@ -41,6 +41,7 @@ extern "C"
 
 	MEDUSA_EXPORT_API bool MGameCleanUp();
 	MEDUSA_EXPORT_API bool MChangeBG(const char* strPath);
+	MEDUSA_EXPORT_API bool MMoveParticle(float dx, float dy);
 };
 
 

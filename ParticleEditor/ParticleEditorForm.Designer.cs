@@ -61,11 +61,11 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.mPlayToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.mEditorPanel = new System.Windows.Forms.Panel();
             this.mPropertyGrid = new System.Windows.Forms.PropertyGrid();
             this.mTimer = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.mMenuStrip.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -343,6 +343,16 @@
             this.mPlayToolStripButton.Text = "播放";
             this.mPlayToolStripButton.Click += new System.EventHandler(this.mPlayToolStripButton_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // mEditorPanel
             // 
             this.mEditorPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -350,6 +360,9 @@
             this.mEditorPanel.Name = "mEditorPanel";
             this.mEditorPanel.Size = new System.Drawing.Size(950, 586);
             this.mEditorPanel.TabIndex = 0;
+            this.mEditorPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mEditorPanel_MouseDown);
+            this.mEditorPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mEditorPanel_MouseMove);
+            this.mEditorPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mEditorPanel_MouseUp);
             // 
             // mPropertyGrid
             // 
@@ -370,16 +383,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // ParticleEditorForm
             // 

@@ -44,6 +44,7 @@ namespace ParticleEditor
         );
 
         public delegate bool MChangeBG(string path);
+        public delegate bool MMoveParticle(float dx,float dy);
 
 
         private readonly DllImporter mDll = new DllImporter();
@@ -288,6 +289,32 @@ namespace ParticleEditor
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
              mDll.Invoke<MChangeBG, bool>(openFileDialog1.FileName);
+        }
+
+        private bool m_draged = false;
+        private Point m_LastPoint;
+        //按下鼠标
+        private void mEditorPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            m_draged = true;
+            m_LastPoint = new Point(e.X,e.Y);
+
+        }
+
+        private void mEditorPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (m_draged)
+            {
+                float deltaX = e.X - m_LastPoint.X;
+                float deltaY = e.Y - m_LastPoint.Y;
+                mDll.Invoke<MMoveParticle, bool>(deltaX,deltaY);
+                m_LastPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void mEditorPanel_MouseUp(object sender, MouseEventArgs e)
+        {
+            m_draged = false;
         }
     }
 }
