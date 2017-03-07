@@ -1,0 +1,10 @@
+E:\Cocos2d-x-ParticleEditor-for-Windows\Debug.win32\ParticleEditor.exe.config
+E:\Cocos2d-x-ParticleEditor-for-Windows\Debug.win32\ParticleEditor.exe
+E:\Cocos2d-x-ParticleEditor-for-Windows\Debug.win32\ParticleEditor.pdb
+E:\Cocos2d-x-ParticleEditor-for-Windows\ParticleEditor\obj\x86\Debug\ParticleEditor.csprojResolveAssemblyReference.cache
+E:\Cocos2d-x-ParticleEditor-for-Windows\ParticleEditor\obj\x86\Debug\ParticleEditor.AboutForm.resources
+E:\Cocos2d-x-ParticleEditor-for-Windows\ParticleEditor\obj\x86\Debug\ParticleEditor.ParticleEditorForm.resources
+E:\Cocos2d-x-ParticleEditor-for-Windows\ParticleEditor\obj\x86\Debug\ParticleEditor.Properties.Resources.resources
+E:\Cocos2d-x-ParticleEditor-for-Windows\ParticleEditor\obj\x86\Debug\ParticleEditor.csproj.GenerateResource.Cache
+E:\Cocos2d-x-ParticleEditor-for-Windows\ParticleEditor\obj\x86\Debug\ParticleEditor.exe
+E:\Cocos2d-x-ParticleEditor-for-Windows\ParticleEditor\obj\x86\Debug\ParticleEditor.pdb

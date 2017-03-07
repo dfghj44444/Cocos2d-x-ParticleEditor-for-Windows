@@ -20,6 +20,14 @@ CCScene* HelloWorld::scene()
 	return scene;
 }
 
+void HelloWorld::ChangeBG(const char* thePath)
+{
+	CCAssert(thePath != NULL, "Invalid filename for sprite");
+
+	CCTexture2D *pTexture = CCTextureCache::sharedTextureCache()->addImage(thePath);
+	mBackground->setTexture(pTexture);
+	//mBackground->setContentSize(pTexture->getContentSize());
+}
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {

@@ -301,7 +301,7 @@ enum {
 # define DWORD unsigned long
 #endif
 #endif
-
+#define HAVE_STRUCT_TIMESPEC
 #ifndef HAVE_STRUCT_TIMESPEC
 #define HAVE_STRUCT_TIMESPEC 1
 struct timespec {
